@@ -1,0 +1,49 @@
+{
+    "name": "designbycode/business-name-generator",
+    "description": "This is my package business-name-generator",
+    "keywords": [
+        "designbycode",
+        "business-name-generator"
+    ],
+    "homepage": "https://github.com/designbycode/business-name-generator",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Claude Myburgh",
+            "email": "claude@designbycode.co.za",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^8.1"
+    },
+    "require-dev": {
+        "pestphp/pest": "^2.20",
+        "laravel/pint": "^1.0",
+        "spatie/ray": "^1.28"
+    },
+    "autoload": {
+        "psr-4": {
+            "Designbycode\\BusinessNameGenerator\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Designbycode\\BusinessNameGenerator\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/pest",
+            "test-coverage": "vendor/bin/pest --coverage",
+        "format": "vendor/bin/pint"
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true,
+            "phpstan/extension-installer": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
