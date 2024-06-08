@@ -4,7 +4,6 @@ namespace Designbycode\BusinessNameGenerator;
 
 class BusinessNameGenerator
 {
-
     public function __construct(public array $adjectives = [], public array $nouns = [])
     {
         $this->adjectives = $adjectives ?: (new Adjectives())->default();
@@ -47,7 +46,6 @@ class BusinessNameGenerator
 
         return $names;
     }
-
 
     private function adjectivesList(string $adjectivesCategory): array
     {
