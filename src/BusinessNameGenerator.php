@@ -49,6 +49,7 @@ class BusinessNameGenerator
 
     private function adjectivesList(string $adjectivesCategory): array
     {
+
         return match (strtolower($adjectivesCategory)) {
             'funny' => (new Adjectives())->funny(),
             'playful' => (new Adjectives())->playful(),
@@ -56,10 +57,12 @@ class BusinessNameGenerator
             'all' => (new Adjectives())->all(),
             default => $this->adjectives,
         };
+
     }
 
     private function nounsList(string $nounsCategory): array
     {
+
         return match (strtolower($nounsCategory)) {
             'funny' => (new Nouns())->funny(),
             'playful' => (new Nouns())->playful(),
@@ -67,5 +70,6 @@ class BusinessNameGenerator
             'all' => (new Nouns())->all(),
             default => $this->nouns,
         };
+
     }
 }
