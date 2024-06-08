@@ -4,6 +4,9 @@ namespace Designbycode\BusinessNameGenerator;
 
 class Nouns implements HasGeneratorLists
 {
+    /**
+     * @return array
+     */
     public function default(): array
     {
         return [
@@ -90,6 +93,9 @@ class Nouns implements HasGeneratorLists
         ];
     }
 
+    /**
+     * @return array
+     */
     public function color(): array
     {
         return Colors::getList();
@@ -114,10 +120,14 @@ class Nouns implements HasGeneratorLists
             'Pranks', 'Tricks', 'High jinks', 'Gaiety', 'Joyfulness',
             'Bliss', 'Rapture', 'Elation', 'Ecstasy', 'Mirth',
             'Giggling', 'Snicker', 'Grin', 'Chuckling', 'Snorting',
-            'Belly laugh', 'Burst of laughter', 'Hysterics', 'Cachinnation', 'Roar of laughter',
+            'Belly laugh', 'Burst of laughter', 'Hysterics', 'Cachinnation',
+            'Roar of laughter',
         ];
     }
 
+    /**
+     * @return array
+     */
     public function all(): array
     {
         return array_merge(

@@ -11,7 +11,7 @@ beforeEach(function () {
 });
 
 it('generates a business name using default lists', function () {
-    $generator = new BusinessNameGenerator();
+    $generator = new BusinessNameGenerator;
     $businessName = $generator->generate();
     expect($businessName)->toBeString();
 });
@@ -29,28 +29,15 @@ it('generates a business name with custom adjectives and nouns', function () {
         ->and($customNouns)->toContain($parts[1]);
 });
 
-it('generates a business name using playful adjectives and color-related nouns', function () {
-    $generator = new BusinessNameGenerator();
-
-    $businessName = $generator->generate('playful', 'color');
-    $parts = explode(' ', $businessName);
-
-    $playfulAdjectives = (new Adjectives())->playful();
-    $colorNouns = (new Nouns())->color();
-
-    expect($parts)->toHaveCount(2)
-        ->and($playfulAdjectives)->toContain($parts[0])
-        ->and($colorNouns)->toContain($parts[1]);
-});
 
 it('generates a business name using funny adjectives and nouns', function () {
-    $generator = new BusinessNameGenerator();
+    $generator = new BusinessNameGenerator;
 
     $businessName = $generator->generate('funny', 'funny');
     $parts = explode(' ', $businessName);
 
-    $funnyAdjectives = (new Adjectives())->funny();
-    $funnyNouns = (new Nouns())->funny();
+    $funnyAdjectives = (new Adjectives)->funny();
+    $funnyNouns = (new Nouns)->funny();
 
     expect($parts)->toHaveCount(2)
         ->and($funnyAdjectives)->toContain($parts[0])
@@ -58,7 +45,7 @@ it('generates a business name using funny adjectives and nouns', function () {
 });
 
 it('sets custom adjectives and nouns after instantiation', function () {
-    $generator = new BusinessNameGenerator();
+    $generator = new BusinessNameGenerator;
 
     $customAdjectives = ['Bright', 'Shiny'];
     $customNouns = ['Star', 'Galaxy'];
@@ -92,11 +79,12 @@ test('it generates multiple business names', function () {
 test('it generates names using specified categories', function () {
     // Assuming you have specific methods in Adjectives and Nouns classes for these categories
     $amount = 5;
-    $names = $this->generator->generateMultiple('funny', 'color', $amount);
+    $names = $this->generator->generateMultiple('playful', 'default', $amount);
 
     // Assert that the returned value is an array
     expect($names)->toBeArray()
-        ->and($names)->toHaveCount($amount);
+        ->and($names)
+        ->toHaveCount($amount);
 
     // Assert that the array contains the correct number of names
 

@@ -4,11 +4,18 @@ namespace Designbycode\BusinessNameGenerator;
 
 class Adjectives implements HasGeneratorLists
 {
+    /**
+     * @param  array  $array
+     * @return array
+     */
     public function custom(array $array): array
     {
         return $array;
     }
 
+    /**
+     * @return array
+     */
     public function default(): array
     {
         return [
@@ -83,11 +90,17 @@ class Adjectives implements HasGeneratorLists
         ];
     }
 
+    /**
+     * @return array
+     */
     public function color(): array
     {
         return Colors::getList();
     }
 
+    /**
+     * @return array
+     */
     public function all(): array
     {
         return array_merge(
