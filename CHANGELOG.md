@@ -2,6 +2,12 @@
 
 All notable changes to `business-name-generator` will be documented in this file.
 
+## v2.0.1 - 2024-06-17
+
+**Full Changelog**: https://github.com/designbycode/business-name-generator/compare/v2.0.0...v2.0.1
+
+- updated formating
+
 ## v1.2.2 - 2024-06-08
 
 ### What's Changed
