@@ -4,8 +4,11 @@
 [![Tests](https://img.shields.io/github/actions/workflow/status/designbycode/business-name-generator/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/designbycode/business-name-generator/actions/workflows/run-tests.yml)
 [![Total Downloads](https://img.shields.io/packagist/dt/designbycode/business-name-generator.svg?style=flat-square)](https://packagist.org/packages/designbycode/business-name-generator)
 
-The BusinessNameGenerator package is designed to help you generate creative and unique business names by combining adjectives and nouns from various categories. The package provides default, funny, playful, and color-related lists for both adjectives and nouns, giving you plenty of options to create a memorable business name.
 
+## Overview
+The Business Name Generator is a PHP class that generates business names based on a combination of adjectives and nouns. It provides a flexible and customizable way to generate business names that can be used for various purposes.
+
+## Business Name Generator Documentation
 ## Installation
 
 You can install the package via composer:
@@ -28,23 +31,73 @@ use Designbycode\BusinessNameGenerator\Adjectives;
 $generator = new BusinessNameGenerator();
 
 // Generate a business name using default adjectives and funny nouns
-$businessName = $generator->generate('default', 'funny');
+$businessName = $generator->generate('default', 'funny')->first();
 echo $businessName;  // Example output: "Innovative Banana"
 ```
 
-### Custom Adjectives and Nouns 
-You can also provide your own lists of adjectives and nouns:
+## Generating Business Names
+To generate business names, use the generate() method:
+```php
+$generator->generate();
+```
+
+This will generate an array of business names based on the adjectives and nouns set earlier. You can access the generated names using the get() method:
+
+```php
+$names = $generator->get();
+```
+## Customizing the Generation Process
+You can customize the generation process by specifying the category of adjectives and nouns to use. For example:
+
+```php
+$generator->generate('funny', 'playful');
+```
+> This will generate business names using funny adjectives and playful nouns.
+
+## Retrieving Specific Names
+You can retrieve specific names from the generated list using the following methods:
+```php
+$last_name = $generator->last(); // returns the last generated business name
+$first_name = $generator->first(); // returns the first generated business name
+$random_name = $generator->random(); // returns a random generated business name
+```
+You can also retrieve an array of random names using the randomArray() method:
+
+```php
+$random_names = $generator->randomArray(3); // returns an array of 3 random generated business names
+```
+
+## Converting to String
+You can convert the generated names to a string using the toString() method:
+
+```php
+$names_string = $generator->toString(', '); // returns a string representation of the generated business names, separated by commas
+```
+
+
+### Setting Adjectives and Nouns
+You can set the adjectives and nouns to use for generating business names using the following methods. You can also provide your own lists of adjectives and nouns:
 
 ```php 
-$customAdjectives = ["Cool", "Amazing", "Super"];
-$customNouns = ["Shop", "Hub", "Center"];
+$businessName = new BusinessNameGenerator();
+$businessName
+    ->setAdjectives(['Innovative', 'Creative', 'Dynamic'])
+    ->setNouns(['Solutions', 'Technologies', 'Ventures'])
+    ->generate()
+    ->first()
 
-$generator = new BusinessNameGenerator($customAdjectives, $customNouns);
-
-$businessName = $generator->generate();
-echo $businessName;  // Example output: "Super Shop"
+echo $businessName;  // Example output: "Creative Solutions"
 
 ```
+Alternatively, you can pass an array of adjectives and nouns to the constructor:
+
+```php
+$businessName = new BusinessNameGenerator(['Innovative', 'Creative', 'Dynamic'], ['Solutions', 'Technologies', 'Ventures']);
+
+$businessName->generate()->first() // Example output: "Creative Solutions"
+```
+
+
 ### Using Specific Categories
 You can generate business names based on specific categories of adjectives and nouns:
 
