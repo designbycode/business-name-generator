@@ -1,9 +1,8 @@
 <?php require_once './vendor/autoload.php';
 
-
 use Designbycode\BusinessNameGenerator\BusinessNameGenerator;
 
-$businessName = new BusinessNameGenerator();
+$businessName = new BusinessNameGenerator;
 $names = $businessName;
 //var_dump($names);
 //echo '-----------------------';
@@ -29,11 +28,11 @@ $names = $businessName;
     </h2>
 
     <div class="text-xl">
-        <?php foreach ($names->generate()->randomArray(17) as $name) : ?>
+        <?php foreach ($names->generate()->randomArray(17) as $name) { ?>
             <span class="even:text-amber-500 inline-block p-2">
             <?= $name ?>
             </span>
-        <?php endforeach; ?>
+        <?php } ?>
     </div>
 
 

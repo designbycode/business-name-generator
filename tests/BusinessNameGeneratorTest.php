@@ -10,7 +10,6 @@ beforeEach(function () {
     $this->generator = new BusinessNameGenerator($this->adjectives, $this->nouns);
 });
 
-
 it('can generates a business name with custom adjectives and nouns', function () {
     $businessName = $this->generator->generate()->first();
     $parts = explode(' ', $businessName);
@@ -18,7 +17,6 @@ it('can generates a business name with custom adjectives and nouns', function ()
         ->and($this->adjectives)->toContain($parts[0])
         ->and($this->nouns)->toContain($parts[1]);
 });
-
 
 it('can generates a business name using funny adjectives and nouns', function () {
 
@@ -80,8 +78,6 @@ it('can generates names using specified categories', function () {
     }
 });
 
-
-
 it('can generate single name', function () {
     expect($this->generator->generate()->first())
         ->toBeString();
@@ -109,13 +105,11 @@ it('can set adjectives, nous and generate name', function () {
 });
 
 it('can use string as parameter for Adjectives', function () {
-        expect($this->generator->setAdjectives('color')->generate()->first())
-            ->toBeString();
+    expect($this->generator->setAdjectives('color')->generate()->first())
+        ->toBeString();
 });
 
 it('can use array as parameter for Adjectives', function () {
-        expect($this->generator->setAdjectives(['silver', 'gold'])->generate()->first())
-            ->toBeString();
+    expect($this->generator->setAdjectives(['silver', 'gold'])->generate()->first())
+        ->toBeString();
 });
-
-
