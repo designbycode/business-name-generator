@@ -10,31 +10,19 @@ beforeEach(function () {
     $this->generator = new BusinessNameGenerator($this->adjectives, $this->nouns);
 });
 
-it('generates a business name using default lists', function () {
-    $generator = new BusinessNameGenerator;
-    $businessName = $generator->generate();
-    expect($businessName)->toBeString();
-});
 
-it('generates a business name with custom adjectives and nouns', function () {
-    $customAdjectives = ['Cool', 'Amazing', 'Super'];
-    $customNouns = ['Shop', 'Hub', 'Center'];
-    $generator = new BusinessNameGenerator($customAdjectives, $customNouns);
-
-    $businessName = $generator->generate();
+it('can generates a business name with custom adjectives and nouns', function () {
+    $businessName = $this->generator->generate()->first();
     $parts = explode(' ', $businessName);
-
     expect($parts)->toHaveCount(2)
-        ->and($customAdjectives)->toContain($parts[0])
-        ->and($customNouns)->toContain($parts[1]);
+        ->and($this->adjectives)->toContain($parts[0])
+        ->and($this->nouns)->toContain($parts[1]);
 });
 
 
-it('generates a business name using funny adjectives and nouns', function () {
-    $generator = new BusinessNameGenerator;
+it('can generates a business name using funny adjectives and nouns', function () {
 
-    $businessName = $generator->generate('funny', 'funny');
-    $parts = explode(' ', $businessName);
+    $parts = explode(' ', $this->generator->generate('funny', 'funny')->first());
 
     $funnyAdjectives = (new Adjectives)->funny();
     $funnyNouns = (new Nouns)->funny();
@@ -44,15 +32,13 @@ it('generates a business name using funny adjectives and nouns', function () {
         ->and($funnyNouns)->toContain($parts[1]);
 });
 
-it('sets custom adjectives and nouns after instantiation', function () {
-    $generator = new BusinessNameGenerator;
-
+it('can sets custom adjectives and nouns after instantiation', function () {
     $customAdjectives = ['Bright', 'Shiny'];
     $customNouns = ['Star', 'Galaxy'];
-    $generator->setAdjectives($customAdjectives);
-    $generator->setNouns($customNouns);
+    $this->generator->setAdjectives($customAdjectives);
+    $this->generator->setNouns($customNouns);
 
-    $businessName = $generator->generate();
+    $businessName = $this->generator->generate()->first();
     $parts = explode(' ', $businessName);
 
     expect($parts)->toHaveCount(2)
@@ -60,9 +46,9 @@ it('sets custom adjectives and nouns after instantiation', function () {
         ->and($customNouns)->toContain($parts[1]);
 });
 
-test('it generates multiple business names', function () {
+it('can generates multiple business names', function () {
     $amount = 10;
-    $names = $this->generator->generateMultiple('default', 'default', $amount);
+    $names = $this->generator->amount(10)->generate('funny', 'color')->get();
 
     // Assert that the returned value is an array
     expect($names)->toBeArray()
@@ -76,10 +62,10 @@ test('it generates multiple business names', function () {
     }
 });
 
-test('it generates names using specified categories', function () {
+it('can generates names using specified categories', function () {
     // Assuming you have specific methods in Adjectives and Nouns classes for these categories
     $amount = 5;
-    $names = $this->generator->generateMultiple('playful', 'default', $amount);
+    $names = $this->generator->amount(5)->generate()->get();
 
     // Assert that the returned value is an array
     expect($names)->toBeArray()
@@ -93,3 +79,43 @@ test('it generates names using specified categories', function () {
         expect($name)->toBeString();
     }
 });
+
+
+
+it('can generate single name', function () {
+    expect($this->generator->generate()->first())
+        ->toBeString();
+});
+
+it('can generate multiple names', function () {
+    expect($this->generator->amount(5)->generate()->get())
+        ->toBeArray()
+        ->toHaveCount(5);
+});
+
+it('can set adjectives and generate name', function () {
+    expect($this->generator->setAdjectives(['happy'])->generate()->first())
+        ->toContain('happy');
+});
+
+it('can set nous and generate name', function () {
+    expect($this->generator->setNouns(['happy'])->generate()->first())
+        ->toContain('happy');
+});
+
+it('can set adjectives, nous and generate name', function () {
+    expect($this->generator->setNouns(['camper'])->setAdjectives(['happy'])->generate()->first())
+        ->toEqual('happy camper');
+});
+
+it('can use string as parameter for Adjectives', function () {
+        expect($this->generator->setAdjectives('color')->generate()->first())
+            ->toBeString();
+});
+
+it('can use array as parameter for Adjectives', function () {
+        expect($this->generator->setAdjectives(['silver', 'gold'])->generate()->first())
+            ->toBeString();
+});
+
+
