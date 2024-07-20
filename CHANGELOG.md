@@ -2,6 +2,16 @@
 
 All notable changes to `business-name-generator` will be documented in this file.
 
+## v2.1.0 - 2024-07-20
+
+### What's Changed
+
+* Bump dependabot/fetch-metadata from 2.1.0 to 2.2.0 by @dependabot in https://github.com/designbycode/business-name-generator/pull/2
+
+**Full Changelog**: https://github.com/designbycode/business-name-generator/compare/v2.0.1...v2.1.0
+
+- Update packages and added more colors and names
+
 ## v2.0.1 - 2024-06-17
 
 **Full Changelog**: https://github.com/designbycode/business-name-generator/compare/v2.0.0...v2.0.1
