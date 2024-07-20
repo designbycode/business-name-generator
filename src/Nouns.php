@@ -69,7 +69,19 @@ class Nouns implements HasGeneratorLists
             'Caretakers', 'Wards', 'Beneficiaries', 'Inheritors', 'Heirs',
             'Successors', 'Assignees', 'Appointees', 'Nominees', 'Candidates',
             'Contestants', 'Challengers', 'Competitors', 'Rivals', 'Opponents',
-            'Adversaries', 'Enemies',
+            'Adversaries', 'Enemies', 'Academy', 'Alliance', 'Altitude', 'Apex', 'Arcadia', 'Arena',
+            'Aspect', 'Atlas', 'Aura', 'Avenue', 'Axis', 'Bazaar', 'Beacon',
+            'Bistro', 'Boulevard', 'Bridge', 'Brio', 'Brook', 'Bunker',
+            'Bureau', 'Buzz', 'Cache', 'Cafe', 'Campus', 'Canyon', 'Cape',
+            'Capital', 'Cascade', 'Castle', 'Catalyst', 'Cellar', 'Center',
+            'Chain', 'Chamber', 'Chateau', 'Circle', 'Citadel', 'City',
+            'Clan', 'Class', 'Clearing', 'Cliff', 'Club', 'Coast', 'Code',
+            'Colony', 'Column', 'Combine', 'Compass', 'Complex', 'Concept',
+            'Concord', 'Cone', 'Congress', 'Conquest', 'Console', 'Constellation',
+            'Construct', 'Continent', 'Core', 'Corner', 'Cosmos', 'Cottage',
+            'Council', 'County', 'Course', 'Cove', 'Craft', 'Creek', 'Crescent',
+            'Crest', 'Crew', 'Crisp', 'Cross', 'Crown', 'Cube', 'Culinary',
+            'Culture', 'Cupola', 'Curve', 'Cut', 'Cycle',
         ];
     }
 

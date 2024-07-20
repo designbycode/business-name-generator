@@ -1,6 +1,6 @@
 {
     "name": "designbycode/business-name-generator",
-    "description": "This is my package business-name-generator",
+    "description": "The Business Name Generator is a PHP class that generates business names based on a combination of adjectives and nouns. It provides a flexible and customizable way to generate business names that can be used for various purposes.",
     "keywords": [
         "designbycode",
         "business-name-generator"

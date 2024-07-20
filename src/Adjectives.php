@@ -44,7 +44,22 @@ class Adjectives implements HasGeneratorLists
             'Incredible', 'Fantastic', 'Fabulous', 'Wonderful', 'Marvelous',
             'Magnificent', 'Brilliant', 'Radiant', 'Luminous', 'Dazzling',
             'Glowing', 'Shining', 'Sparkling', 'Gleaming', 'Bright',
-            'Vivid', 'Vibrant', 'Colorful',
+            'Vivid', 'Vibrant', 'Colorful', 'Adventurous', 'Bold', 'Brilliant', 'Captivating', 'Charming',
+            'Clever', 'Confident', 'Courageous', 'Daring', 'Delightful',
+            'Dramatic', 'Elegant', 'Enchanting', 'Exquisite', 'Fearless',
+            'Flamboyant', 'Fresh', 'Genuine', 'Happy', 'Harmonious',
+            'Heroic', 'Ingenious', 'Inspiring', 'Intense', 'Intriguing',
+            'Joyful', 'Kind', 'Lovely', 'Loyal', 'Magical', 'Marvelous',
+            'Mesmerizing', 'Modern', 'Nimble', 'Optimistic', 'Original',
+            'Passionate', 'Peaceful', 'Precise', 'Progressive', 'Pioneering',
+            'Quirky', 'Radiant', 'Reliable', 'Resilient', 'Romantic',
+            'Sassy', 'Savvy', 'Sincere', 'Sleek', 'Smart', 'Sophisticated',
+            'Sparkling', 'Spectacular', 'Speedy', 'Splendid', 'Spontaneous',
+            'Stellar', 'Strong', 'Stylish', 'Suave', 'Superb', 'Swift',
+            'Talented', 'Tenacious', 'Thoughtful', 'Timeless', 'Tranquil',
+            'Trendy', 'Unique', 'Unstoppable', 'Vibrant', 'Vigilant',
+            'Visionary', 'Vivacious', 'Warm', 'Wise', 'Witty', 'Wonderful',
+            'Xenial', 'Yellow', 'Youthful', 'Zealous', 'Zesty',
         ];
     }
 
